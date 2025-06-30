@@ -1,0 +1,1039 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#"
+     xml:base="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology"
+     xmlns:ex="http://example.org/mentalhealth#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/mentalhealth#hasExclusion -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/mentalhealth#hasExclusion">
+        <rdfs:domain rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+        <rdfs:range rdf:resource="http://example.org/mentalhealth#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/mentalhealth#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/mentalhealth#hasSymptom">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://example.org/mentalhealth#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasDisorder -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasDisorder">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientProfile"/>
+        <rdfs:range rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/mentalhealth#durationDays -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/mentalhealth#durationDays">
+        <rdfs:domain rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/mentalhealth#requiredSymptomCount -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/mentalhealth#requiredSymptomCount">
+        <rdfs:domain rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/mentalhealth#Anhedonia -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Anhedonia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#AnxietyEpisode -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#AnxietyEpisode">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveAnxiety"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#UncontrollableWorry"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Episode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#AppetiteDecrease -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#AppetiteDecrease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#AppetiteIncrease -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#AppetiteIncrease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#DepressedMood -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#DepressedMood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#DepressionEpisode -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#DepressionEpisode">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://example.org/mentalhealth#Anhedonia"/>
+                            <rdf:Description rdf:about="http://example.org/mentalhealth#DepressedMood"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Episode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#DifficultyConcentrating -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#DifficultyConcentrating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#DiminishedAbilityToThink -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#DiminishedAbilityToThink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#Distractibility -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Distractibility">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#ElevatedMood -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#ElevatedMood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#ExcessiveGuilt -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#ExcessiveGuilt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#Fatigue -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Fatigue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#FeelingOnEdge -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#FeelingOnEdge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#FeelingsOfWorthlessness -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#FeelingsOfWorthlessness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#FlightOfIdeas -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#FlightOfIdeas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#Grandiosity -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Grandiosity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#Hypersomnia -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Hypersomnia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#IncreasedEnergy -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#IncreasedEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#IncreasedGoalDirectedActivity -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#IncreasedGoalDirectedActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#InflatedSelfEsteem -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#InflatedSelfEsteem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#Insomnia -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Insomnia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#IrritableMood -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#IrritableMood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#LossOfEnergy -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#LossOfEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#ManicEpisode -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#ManicEpisode">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://example.org/mentalhealth#ElevatedMood"/>
+                            <rdf:Description rdf:about="http://example.org/mentalhealth#IncreasedEnergy"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Episode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#MentalDisorder -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#MentalDisorder"/>
+    
+
+
+    <!-- http://example.org/mentalhealth#MindGoingBlank -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#MindGoingBlank">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#MoreTalkativeThanUsual -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#MoreTalkativeThanUsual">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#MuscleTension -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#MuscleTension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#PressureToKeepTalking -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#PressureToKeepTalking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#PsychomotorAgitation -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#PsychomotorAgitation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#PsychomotorRetardation -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#PsychomotorRetardation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#RacingThoughts -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#RacingThoughts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#RecurrentThoughtsOfDeath -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#RecurrentThoughtsOfDeath">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#Restlessness -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Restlessness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#RiskyBehavior -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#RiskyBehavior">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#SleepDisturbance -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#SleepDisturbance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#SuicidalIdeation -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#SuicidalIdeation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#Symptom -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#Symptom"/>
+    
+
+
+    <!-- http://example.org/mentalhealth#WeightGain -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#WeightGain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/mentalhealth#WeightLoss -->
+
+    <owl:Class rdf:about="http://example.org/mentalhealth#WeightLoss">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietyDisorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietyDisorder">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/mentalhealth#AnxietyEpisode"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom">
+        <rdfs:subClassOf rdf:resource="http://example.org/mentalhealth#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarDisorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarDisorder">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarEpisode"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarEpisode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarEpisode">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://example.org/mentalhealth#Anhedonia"/>
+                                    <rdf:Description rdf:about="http://example.org/mentalhealth#DepressedMood"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.org/mentalhealth#hasSymptom"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://example.org/mentalhealth#ElevatedMood"/>
+                            <rdf:Description rdf:about="http://example.org/mentalhealth#IncreasedEnergy"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Episode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionSymptom">
+        <rdfs:subClassOf rdf:resource="http://example.org/mentalhealth#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Episode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Episode"/>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveAnxiety -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveAnxiety">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MajorDepressionDisorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MajorDepressionDisorder">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode"/>
+                <owl:someValuesFrom rdf:resource="http://example.org/mentalhealth#DepressionEpisode"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode"/>
+                <owl:allValuesFrom rdf:resource="http://example.org/mentalhealth#DepressionEpisode"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicDisorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicDisorder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode"/>
+                        <owl:someValuesFrom rdf:resource="http://example.org/mentalhealth#ManicEpisode"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#hasEpisode"/>
+                        <owl:allValuesFrom rdf:resource="http://example.org/mentalhealth#ManicEpisode"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.org/mentalhealth#MentalDisorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicSymptom">
+        <rdfs:subClassOf rdf:resource="http://example.org/mentalhealth#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientProfile"/>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#UncontrollableWorry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#UncontrollableWorry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietySymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Anhedonia1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Anhedonia1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#Anhedonia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietyEpisode1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AnxietyEpisode1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#AnxietyEpisode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AppetiteDecrease1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AppetiteDecrease1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#AppetiteDecrease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AppetiteIncrease1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AppetiteIncrease1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#AppetiteIncrease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarEpisode1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarEpisode1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#BipolarEpisode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressedMood1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressedMood1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#DepressedMood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionEpisode1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DepressionEpisode1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#DepressionEpisode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DifficultyConcentrating1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DifficultyConcentrating1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#DifficultyConcentrating"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DiminishedAbilityToThink1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#DiminishedAbilityToThink1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#DiminishedAbilityToThink"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Distractablity1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Distractablity1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#Distractibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ElevatedMood1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ElevatedMood1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#ElevatedMood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveAnxiety1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveAnxiety1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveAnxiety"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveGuilt1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveGuilt1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#ExcessiveGuilt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Fatigue1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Fatigue1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#Fatigue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#FeelingOnEdge1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#FeelingOnEdge1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#FeelingOnEdge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#FeelingsOfWorthlessness1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#FeelingsOfWorthlessness1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#FeelingsOfWorthlessness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#FlightOfIdeas1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#FlightOfIdeas1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#FlightOfIdeas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Grandiosity1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Grandiosity1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#Grandiosity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Hypersomnia1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Hypersomnia1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#Hypersomnia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IncreasedEnergy1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IncreasedEnergy1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#IncreasedEnergy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IncreasedGoalDirectedActivity1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IncreasedGoalDirectedActivity1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#IncreasedGoalDirectedActivity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#InflatedSelfEsteem1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#InflatedSelfEsteem1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#InflatedSelfEsteem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Insomnia1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Insomnia1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#Insomnia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IrritableMood1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IrritableMood1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#IrritableMood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#LossOfEnergy1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#LossOfEnergy1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#LossOfEnergy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicEpisode1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ManicEpisode1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#ManicEpisode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MindGoingBlank1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MindGoingBlank1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#MindGoingBlank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MoreTalkativeThanUsual1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MoreTalkativeThanUsual1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#MoreTalkativeThanUsual"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MuscleTension1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MuscleTension1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#MuscleTension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestAnxiety -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestAnxiety">
+        <rdf:type rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientProfile"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ExcessiveAnxiety1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#MuscleTension1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestBipolar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestBipolar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientProfile"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Anhedonia1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#ElevatedMood1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Fatigue1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Hypersomnia1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IncreasedEnergy1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Insomnia1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IrritableMood1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RiskyBehavior1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestDepression -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestDepression">
+        <rdf:type rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientProfile"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Anhedonia1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#AppetiteIncrease1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Fatigue1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#LossOfEnergy1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#WeightGain1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestManic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientTestManic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PatientProfile"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Grandiosity1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IncreasedEnergy1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#IrritableMood1"/>
+        <ex:hasSymptom rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RiskyBehavior1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PressureToKeepTalking1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PressureToKeepTalking1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#PressureToKeepTalking"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PsychomotorAgitation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PsychomotorAgitation1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#PsychomotorAgitation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PsychomotorRetardation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#PsychomotorRetardation1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#PsychomotorRetardation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RacingThoughts1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RacingThoughts1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#RacingThoughts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RecurrentThoughtsOfDeath -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RecurrentThoughtsOfDeath">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#RecurrentThoughtsOfDeath"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Restlessness1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#Restlessness1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#Restlessness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RiskyBehavior1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#RiskyBehavior1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#RiskyBehavior"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#SleepDisturbance1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#SleepDisturbance1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#SleepDisturbance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#SuicidalIdeation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#SuicidalIdeation1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#SuicidalIdeation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#UncontrollableWorry1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#UncontrollableWorry1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#UncontrollableWorry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#WeightGain1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#WeightGain1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#WeightGain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#WeightLoss1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/patrick/ontologies/2025/5/mental-health-ontology#WeightLoss1">
+        <rdf:type rdf:resource="http://example.org/mentalhealth#WeightLoss"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,47 @@
+# Regenerated symptom map matching ontology individuals
+
+symptom_map = [
+
+    {"display": "Depressed Mood",
+    "individual": "DepressedMood1",
+    "class": "ex:DepressedMood",
+    "variants": ["depressed", "feeling down", "low mood", "hopeless", "sadness", "feeling blue"]
+},
+
+    {"display": "Anhedonia", "individual": "Anhedonia1", "class": "ex:Anhedonia", "variants": ["anhedonia", "loss of interest", "no pleasure"]},
+    {"display": "Appetite Decrease", "individual": "AppetiteDecrease1", "class": "ex:AppetiteDecrease", "variants": ["loss of appetite", "not hungry", "eating less"]},
+    {"display": "Appetite Increase", "individual": "AppetiteIncrease1", "class": "ex:AppetiteIncrease", "variants": ["increased appetite", "eating more", "hungry all the time"]},
+    {"display": "Difficulty Concentrating", "individual": "DifficultyConcentrating1", "class": "ex:DifficultyConcentrating", "variants": ["can't focus", "difficulty concentrating", "mind wanders"]},
+    {"display": "Diminished Ability to Think", "individual": "DiminishedAbilityToThink1", "class": "ex:DiminishedAbilityToThink", "variants": ["slow thinking", "can't think clearly", "mental fog"]},
+    {"display": "Distractibility", "individual": "Distractability1", "class": "ex:Distractability", "variants": ["easily distracted", "short attention span", "can't stay focused"]},
+    {"display": "Elevated Mood", "individual": "ElevatedMood1", "class": "ex:ElevatedMood", "variants": ["feeling high", "euphoric", "too happy"]},
+    {"display": "Excessive Anxiety", "individual": "ExcessiveAnxiety1", "class": "ex:ExcessiveAnxiety", "variants": ["anxious", "excessive worry", "panicking"]},
+    {"display": "Excessive Guilt", "individual": "ExcessiveGuilt1", "class": "ex:ExcessiveGuilt", "variants": ["feel guilty", "blame myself", "remorseful"]},
+    {"display": "Fatigue", "individual": "Fatigue1", "class": "ex:Fatigue", "variants": ["tired", "low energy", "exhausted"]},
+    {"display": "Feeling On Edge", "individual": "FeelingOnEdge1", "class": "ex:FeelingOnEdge", "variants": ["on edge", "uneasy", "jumpy"]},
+    {"display": "Feelings of Worthlessness", "individual": "FeelingsOfWorthlessness1", "class": "ex:FeelingsOfWorthlessness", "variants": ["worthless", "no value", "self-hate"]},
+    {"display": "Flight of Ideas", "individual": "FlightOfIdeas1", "class": "ex:FlightOfIdeas", "variants": ["jumping from topic", "disorganized thoughts"]},
+    {"display": "Grandiosity", "individual": "Grandiosity1", "class": "ex:Grandiosity", "variants": ["delusions of grandeur", "feeling powerful", "invincible"]},
+    {"display": "Hypersomnia", "individual": "Hypersomnia1", "class": "ex:Hypersomnia", "variants": ["sleeping too much", "can't stay awake"]},
+    {"display": "Increased Energy", "individual": "IncreasedEnergy1", "class": "ex:IncreasedEnergy", "variants": ["energetic", "hyper", "can't sit still"]},
+    {"display": "Increased Goal Directed Activity", "individual": "IncreasedGoalDirectedActivity1", "class": "ex:IncreasedGoalDirectedActivity", "variants": ["productive", "overactive", "goal oriented"]},
+    {"display": "Inflated Self Esteem", "individual": "InflatedSelfEsteem1", "class": "ex:InflatedSelfEsteem", "variants": ["overconfident", "feel superior", "inflated ego"]},
+    {"display": "Insomnia", "individual": "Insomnia1", "class": "ex:Insomnia", "variants": ["can't sleep", "sleep problems", "trouble sleeping"]},
+    {"display": "Irritable Mood", "individual": "IrritableMood1", "class": "ex:IrritableMood", "variants": ["irritable", "easily annoyed", "snappy"]},
+    {"display": "Loss of Energy", "individual": "LossOfEnergy1", "class": "ex:LossOfEnergy", "variants": ["exhausted", "no energy", "worn out"]},
+    {"display": "Mind Going Blank", "individual": "MindGoingBlank1", "class": "ex:MindGoingBlank", "variants": ["blank mind", "lost train of thought", "forgetting"]},
+    {"display": "More Talkative Than Usual", "individual": "MoreTalkativeThanUsual1", "class": "ex:MoreTalkativeThanUsual", "variants": ["talkative", "won't stop talking", "chatterbox"]},
+    {"display": "Muscle Tension", "individual": "MuscleTension1", "class": "ex:MuscleTension", "variants": ["tight muscles", "muscle stiffness", "tense body"]},
+    {"display": "Pressure To Keep Talking", "individual": "PressureToKeepTalking1", "class": "ex:PressureToKeepTalking", "variants": ["talking nonstop", "can't stop speaking", "pressured speech"]},
+    {"display": "Psychomotor Agitation", "individual": "PsychomotorAgitation1", "class": "ex:PsychomotorAgitation", "variants": ["fidgeting", "pacing", "can't sit still"]},
+    {"display": "Psychomotor Retardation", "individual": "PsychomotorRetardation1", "class": "ex:PsychomotorRetardation", "variants": ["slow movement", "sluggish", "heavy limbs"]},
+    {"display": "Racing Thoughts", "individual": "RacingThoughts1", "class": "ex:RacingThoughts", "variants": ["too many thoughts", "mind racing", "can't slow down"]},
+    {"display": "Recurrent Thoughts of Death", "individual": "RecurrentThoughtsOfDeath", "class": "ex:RecurrentThoughtsOfDeath", "variants": ["think about death", "death obsession", "morbid thoughts"]},
+    {"display": "Restlessness", "individual": "Restlessness1", "class": "ex:Restlessness", "variants": ["restless", "can't stay still", "jittery"]},
+    {"display": "Risky Behavior", "individual": "RiskyBehavior1", "class": "ex:RiskyBehavior", "variants": ["reckless", "dangerous actions", "impulsive"]},
+    {"display": "Sleep Disturbance", "individual": "SleepDisturbance1", "class": "ex:SleepDisturbance", "variants": ["broken sleep", "bad sleep", "frequent waking"]},
+    {"display": "Suicidal Ideation", "individual": "SuicidalIdeation1", "class": "ex:SuicidalIdeation", "variants": ["want to die", "suicidal", "ending it"]},
+    {"display": "Uncontrollable Worry", "individual": "UncontrollableWorry1", "class": "ex:UncontrollableWorry", "variants": ["worry too much", "can't stop worrying", "obsessive worry"]},
+    {"display": "Weight Gain", "individual": "WeightGain1", "class": "ex:WeightGain", "variants": ["gained weight", "eating too much", "heavier"]},
+    {"display": "Weight Loss", "individual": "WeightLoss1", "class": "ex:WeightLoss", "variants": ["lost weight", "thinner", "eating less"]}
+]
