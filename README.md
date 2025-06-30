@@ -15,3 +15,12 @@ Getting started:
 The app will open in your browser at http://localhost:8501.
 
 Note: Make sure PatrickMentalHealthOntologyPython.rdf is present in the project root folder.
+
+How to use: 
+
+Write symptoms in the text box and select from the menu. With fuzzy matching, it can approximate typos and show possible alternative names for symptoms. 
+
+
+Example picture: 
+
+Use the "Diagnose" button and wait for inferred symptoms, episodes, and disorders.
