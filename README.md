@@ -25,5 +25,5 @@ Use the "Diagnose" button and wait for inferred symptoms, episodes, and disorder
 
 Example image:
 
-![App Screenshot](Anxiety patient.png)
+![App Screenshot](Anxietypatient.png)
 
