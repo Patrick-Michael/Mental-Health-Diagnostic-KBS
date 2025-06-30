@@ -18,9 +18,12 @@ Note: Make sure PatrickMentalHealthOntologyPython.rdf is present in the project 
 
 How to use: 
 
-Write symptoms in the text box and select from the menu. With fuzzy matching, it can approximate typos and show possible alternative names for symptoms. 
-
-
-Example picture: 
+Write symptoms in the text box and select from the menu. With fuzzy matching, it can approximate typos and show possible alternative names for symptoms.  
 
 Use the "Diagnose" button and wait for inferred symptoms, episodes, and disorders.
+
+
+Example image:
+
+![App Screenshot](Anxiety patient.png)
+
